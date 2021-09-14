@@ -1,0 +1,55 @@
+:root {
+  --bg: slategray;
+  --shadow: 0 5px 1px 5px rgba(0, 0, 0, 0.2);
+  --text-shadow: 0 0.1rem 2px #00000055;
+}
+
+body {
+  background-color: rgb(104, 155, 161);
+  color: floralwhite;
+  display: flex;
+}
+
+div {
+  max-width: 95vw;
+}
+
+.convo-container {
+  margin: 4rem;
+  border-radius: 1rem;
+  padding: 1.5rem 0.3rem 0.1rem 0.3rem;
+  background-color: rgb(76, 87, 97);
+  color: black;
+  box-shadow: var(--shadow);
+}
+
+.convo-entry {
+  margin: 1rem;
+  border-radius: 0rem 0.75rem 0.75rem 0.75rem;
+  background-color: lightsalmon;
+}
+
+.entry-header {
+  margin: 0 0 0.3rem 0;
+  color: #ccc;
+  background-color: #00000077;
+  /* height: 1.1rem; */
+  width: fit-content;
+  border-radius: 0 0.75rem 0.25rem 0;
+  overflow: auto;
+}
+.entry-sender {
+  margin: 0 0.25rem;
+  float: left;
+}
+.entry-date {
+  margin: 0.2rem 1rem;
+  float: right;
+}
+.message {
+  color: whitesmoke;
+  margin: 0;
+  padding: 0.2rem 0.75rem;
+  text-shadow: var(--text-shadow);
+  overflow-wrap: break-word;
+}
