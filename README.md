@@ -1,2 +1,3 @@
-# React-Portfolio-Site
- Attempt at making a porfolio site with react
+# Capstone-Prototype
+
+Prototype of a front end for Capstone project
