@@ -1,4 +1,7 @@
+import React from 'react';
 import { Conversation } from './Conversation';
+import Header from './Header';
+import {Container} from 'react-bootstrap';
 // import {testData} from './testData'
 import {useState, useEffect} from 'react'
 const url = 'http://localhost:3001'
@@ -14,7 +17,7 @@ function App() {
 
   const handleSubmit=async(e)=>{
     e.preventDefault();
-    let v = await JSON.stringify({sender:'Default User',text});
+    let v = await JSON.stringify({sender:'D vefault User',text});
     console.log(v);
     await fetch(url, {
       method: 'POST',
@@ -45,15 +48,21 @@ function App() {
     setMessages(val);
   }
 
+  return (
+    <div>
+      <Header/>
+      <br/>
+      <Container>
+        <Conversation entries={messages} deleteMessage={deleteMessage}/>
+        <form className="convo-container">
+          <input type="text" value={text} onChange={(e)=>setText(e.target.value)}/>
+          <button type='submit' onClick={handleSubmit}>send</button>
+        </form>
+      </Container>
 
-  return <>
-    <Conversation entries={messages} deleteMessage={deleteMessage}/>
-    <form className="convo-container">
-      <input type="text" value={text} onChange={(e)=>setText(e.target.value)}/>
-      <button type='submit' onClick={handleSubmit}>send</button>
-    </form>
-    {/* <button className="convo-container" onClick={fetchData}>Refresh</button> */}
-  </>
+      {/* <button className="convo-container" onClick={fetchData}>Refresh</button> */}
+    </div>
+  )
 }
 
 export default App;
