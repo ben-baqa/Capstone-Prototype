@@ -1,13 +1,10 @@
-import React from 'react';
-import { Conversation } from './Conversation';
-import Header from './Header';
+import React, {useEffect, useState} from 'react'
 import {Container} from 'react-bootstrap';
-// import {testData} from './testData'
-import {useState, useEffect} from 'react'
+import {Conversation} from "./Conversation";
 const url = 'http://localhost:3001'
 
-// new Date().toUTCString()
-function App() {
+export const ChannelShow = () => {
+
   const [messages, setMessages] = useState([]);
   const [text, setText] = useState('')
 
@@ -48,21 +45,16 @@ function App() {
     setMessages(val);
   }
 
-  return (
-    <div>
-      <Header/>
-      <br/>
-      <Container>
-        <Conversation entries={messages} deleteMessage={deleteMessage}/>
-        <form className="convo-container">
-          <input type="text" value={text} onChange={(e)=>setText(e.target.value)}/>
-          <button type='submit' onClick={handleSubmit}>send</button>
-        </form>
-      </Container>
-
-      {/* <button className="convo-container" onClick={fetchData}>Refresh</button> */}
-    </div>
-  )
+    return (
+        <Container>
+            <h1>Channel List</h1>
+            <Container>
+                <Conversation entries={messages} deleteMessage={deleteMessage}/>
+                <form className="convo-container">
+                  <input type="text" value={text} onChange={(e)=>setText(e.target.value)}/>
+                  <button type='submit' onClick={handleSubmit}>send</button>
+                </form>
+            </Container>
+        </Container>
+    )
 }
-
-export default App;

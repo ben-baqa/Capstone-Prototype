@@ -1,10 +1,9 @@
 import React from 'react'
-import { useState } from 'react'
 import {FaTrash} from 'react-icons/fa'
 import {Card} from 'react-bootstrap';
 
 export const Conversation = ({entries, deleteMessage}) => {
-    return <div className="convo-container">
+    return <div>
         {entries.map((entry)=>{
             return <ConversationEntry key = {entry.date} {...entry} deleteMessage={deleteMessage}/>
         })}
@@ -12,8 +11,6 @@ export const Conversation = ({entries, deleteMessage}) => {
 }
 
 const ConversationEntry = ({sender, date, text, deleteMessage})=>{
-    const [showHeader, setShowHeader] = useState(false)
-
     const dateTime = new Date(date * 1000);
     return (
         <Card style={{ width: '18rem' }}>
