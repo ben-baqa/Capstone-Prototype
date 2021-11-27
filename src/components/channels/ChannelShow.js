@@ -47,14 +47,16 @@ export const ChannelShow = () => {
 
     return (
         <Container>
-            <h1>Channel List</h1>
+            <h1>Sample Channel</h1><br/>
             <Container>
                 <Conversation entries={messages} deleteMessage={deleteMessage}/>
                 <form className="convo-container">
                   <input type="text" value={text} onChange={(e)=>setText(e.target.value)}/>
                   <button type='submit' onClick={handleSubmit}>send</button>
-                </form>
+                </form><br/>
+                <a href="/channels">Back to All Channels</a>
             </Container>
+
         </Container>
     )
 }

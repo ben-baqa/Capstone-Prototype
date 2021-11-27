@@ -5,6 +5,7 @@ export const LandingPage = () => {
     return(
         <Container>
             <h1>Landing Page</h1>
+            <a href="/channels">View All Channels</a>
         </Container>
     )
 }
