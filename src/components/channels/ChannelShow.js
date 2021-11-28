@@ -1,10 +1,10 @@
-import { Conversation } from './Conversation';
-// import {testData} from './testData'
-import {useState, useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
+import {Container} from 'react-bootstrap';
+import {Conversation} from "./Conversation";
 const url = 'http://localhost:3001'
 
-// new Date().toUTCString()
-function App() {
+export const ChannelShow = () => {
+
   const [messages, setMessages] = useState([]);
   const [text, setText] = useState('')
 
@@ -14,7 +14,7 @@ function App() {
 
   const handleSubmit=async(e)=>{
     e.preventDefault();
-    let v = await JSON.stringify({sender:'Default User',text});
+    let v = await JSON.stringify({sender:'D vefault User',text});
     console.log(v);
     await fetch(url, {
       method: 'POST',
@@ -45,15 +45,18 @@ function App() {
     setMessages(val);
   }
 
+    return (
+        <Container>
+            <h1>Sample Channel</h1><br/>
+            <Container>
+                <Conversation entries={messages} deleteMessage={deleteMessage}/>
+                <form className="convo-container">
+                  <input type="text" value={text} onChange={(e)=>setText(e.target.value)}/>
+                  <button type='submit' onClick={handleSubmit}>send</button>
+                </form><br/>
+                <a href="/channels">Back to All Channels</a>
+            </Container>
 
-  return <>
-    <Conversation entries={messages} deleteMessage={deleteMessage}/>
-    <form className="convo-container">
-      <input type="text" value={text} onChange={(e)=>setText(e.target.value)}/>
-      <button type='submit' onClick={handleSubmit}>send</button>
-    </form>
-    {/* <button className="convo-container" onClick={fetchData}>Refresh</button> */}
-  </>
+        </Container>
+    )
 }
-
-export default App;
