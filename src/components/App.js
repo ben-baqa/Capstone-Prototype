@@ -5,7 +5,7 @@ import { ChannelList} from "./channels/ChannelList";
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Header from './Header';
 import history from '../history';
-const url = 'http://localhost:3001'
+// const url = 'http://localhost:3001'
 
 // new Date().toUTCString()
 function App() {

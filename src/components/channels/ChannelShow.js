@@ -1,9 +1,12 @@
 import React, {useEffect, useState} from 'react'
+import {useParams} from 'react-router-dom'
 import {Container} from 'react-bootstrap';
 import {Conversation} from "./Conversation";
 const url = 'http://localhost:3001'
 
 export const ChannelShow = () => {
+  // get channel id from url
+  let {id} = useParams()
 
   const [messages, setMessages] = useState([]);
   const [text, setText] = useState('')
@@ -14,14 +17,14 @@ export const ChannelShow = () => {
 
   const handleSubmit=async(e)=>{
     e.preventDefault();
-    let v = await JSON.stringify({sender:'D vefault User',text});
-    console.log(v);
+    // let v = await JSON.stringify({sender:'D vefault User',text});
+    // console.log(v);
     await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({sender:'Default User',text})
+      body: JSON.stringify({sender:'Default User',text, channel:id})
     });
     setText('')
     fetchData();
@@ -40,14 +43,14 @@ export const ChannelShow = () => {
   }
 
   const fetchData = async()=>{
-    const response = await fetch(url + '/all')
+    const response = await fetch(url + `/p/${id}`)
     const val = await response.json()
     setMessages(val);
   }
 
     return (
         <Container>
-            <h1>Sample Channel</h1><br/>
+            <h1>Channel {id}</h1><br/>
             <Container>
                 <Conversation entries={messages} deleteMessage={deleteMessage}/>
                 <form className="convo-container">
