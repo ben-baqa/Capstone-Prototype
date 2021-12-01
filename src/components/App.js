@@ -11,7 +11,13 @@ import history from '../history';
 function App() {
 
   return (
-    <div>
+    <div style={{
+        backgroundImage: `url("https://images.unsplash.com/photo-1622737133809-d95047b9e673?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80")`,
+        backgroundRepeat:"no-repeat",
+        backgroundSize:"cover",
+        backgroundPosition:"center",
+        height:'100vh'
+    }}>
       <Header/>
       <br/>
       <Router history={history}>

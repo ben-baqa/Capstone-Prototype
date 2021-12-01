@@ -1,0 +1,16 @@
+.page-title{
+    padding-bottom:30px;
+}
+
+.link-col{
+    marginBottom:30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*#channel-button{*/
+/*    font-size: 20px;*/
+/*    background-color: transparent;*/
+/*    border:  2px solid #fff959;*/
+/*}*/

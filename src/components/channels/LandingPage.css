@@ -1,0 +1,27 @@
+.title-container{
+    padding-top: 275px;
+    width:100%;
+    display: table;
+    align-items: center;
+}
+
+h1 {
+    color:white;
+    text-align: center;
+    vertical-align: middle;
+    display:table-cell;
+}
+
+.link-container{
+    width: 100%;
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#link-button{
+    background-color: transparent;
+    border:  2px solid #fff959;
+}
+
