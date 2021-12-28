@@ -9,8 +9,6 @@
     align-items: center;
 }
 
-/*#channel-button{*/
-/*    font-size: 20px;*/
-/*    background-color: transparent;*/
-/*    border:  2px solid #fff959;*/
-/*}*/
+#container{
+    min-height: 100vh;
+}

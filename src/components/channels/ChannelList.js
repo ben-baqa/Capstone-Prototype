@@ -33,7 +33,7 @@ export const ChannelList = () => {
     }
 
     return(
-        <Container>
+        <Container id="container">
             <h1 className="page-title">All Channels</h1>
             <Container fluid>
                 <Row>

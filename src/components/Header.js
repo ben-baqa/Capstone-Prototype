@@ -21,18 +21,17 @@ export const Header = () => {
   return (
     <Navbar bg="dark" expand="lg">
       <Container>
-        <Navbar.Brand href="/" style={{color:"white"}}>TalkBox</Navbar.Brand>
+        <Navbar.Brand href="/channels" style={{color:"white"}}>TalkBox</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text style={{color:"white"}}>
-            {currentUser && currentUser.email}
+            {currentUser && currentUser.email}&nbsp;
           </Navbar.Text>
           <Button variant="danger" onClick={handleLogout}>Log Out</Button>
         </Navbar.Collapse>
       </Container>
     </Navbar>
   )
-
 }
 
 export default Header;
