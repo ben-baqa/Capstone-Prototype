@@ -1,22 +1,37 @@
-import React from 'react';
-import {Navbar, Nav, Container} from 'react-bootstrap';
+import React, {useState} from 'react';
+import {Navbar, Nav, Container, Button} from 'react-bootstrap';
+import {useAuth} from "./contexts/AuthContext";
+import {useNavigate} from "react-router-dom";
 
-class Header extends React.Component {
+export const Header = () => {
 
-  render(){
-    return (
-      <Navbar bg="dark" expand="lg">
-        <Container>
-          <Navbar.Brand href="/" style={{color:"white"}}>TalkBox</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ml-auto">
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    )
+  const {currentUser, logout} = useAuth();
+  const {error, setError} = useState("");
+  const navigate = useNavigate();
+
+  async function handleLogout(){
+    try{
+      await logout();
+      navigate('/');
+    } catch {
+      setError('Failed to log out.');
+    }
   }
+
+  return (
+    <Navbar bg="dark" expand="lg">
+      <Container>
+        <Navbar.Brand href="/channels" style={{color:"white"}}>TalkBox</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse className="justify-content-end">
+          <Navbar.Text style={{color:"white"}}>
+            {currentUser && currentUser.email}&nbsp;
+          </Navbar.Text>
+          <Button variant="danger" onClick={handleLogout}>Log Out</Button>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  )
 }
 
 export default Header;

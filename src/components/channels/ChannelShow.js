@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import {Container} from 'react-bootstrap';
 import {Conversation} from "./Conversation";
+import './ChannelShow.css'
 const url = 'http://localhost:3001'
 
 export const ChannelShow = () => {
@@ -49,7 +50,7 @@ export const ChannelShow = () => {
   }
 
     return (
-        <Container>
+        <Container id="container">
             <h1>Channel {id}</h1><br/>
             <Container>
                 <Conversation entries={messages} deleteMessage={deleteMessage}/>
@@ -59,7 +60,6 @@ export const ChannelShow = () => {
                 </form><br/>
                 <a href="/channels">Back to All Channels</a>
             </Container>
-
         </Container>
     )
 }
