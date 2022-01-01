@@ -9,7 +9,7 @@ export const LandingPage = () => {
     useEffect(() => {
         console.log('establishing socket connection')
 
-        let ws = new WebSocket('ws://localhost:3002')
+        let ws = new WebSocket('wss://localhost:8080')
         ws.addEventListener('open', (e) => {
             // ws.addEventListener('message', (e) => {
             //     let msg = e.data
@@ -46,6 +46,9 @@ export const LandingPage = () => {
                     </div>
                     <div className="link-container">
                         <Button id="link-button" href="/signup">Sign Up</Button>
+                    </div>
+                    <div className='link-container'>
+                        <Button className="link-button" onClick={()=> socket.send(`test:${id}`)}>Test Socket</Button>
                     </div>
                 </form>
             </div>
