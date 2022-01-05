@@ -1,37 +1,40 @@
 import React, {useEffect, useState} from 'react'
 import {Container, Button} from "react-bootstrap";
 import './LandingPage.css';
+import getSocket from '../../Socket';
 
 export const LandingPage = () => {
-    const [socket, setSocket] = useState(null)
-    const [id, setID] = useState(-1)
+    // const [socket, setSocket] = useState(null)
+    // const [id, setID] = useState(-1)
 
     useEffect(() => {
-        console.log('establishing socket connection')
+        // console.log('establishing socket connection')
 
-        let ws = new WebSocket('wss://localhost:8080')
-        ws.addEventListener('open', (e) => {
-            // ws.addEventListener('message', (e) => {
-            //     let msg = e.data
-            //     console.log('received from socket: ', msg)
-            //     if (msg.startsWith('connection id:'))
-            //         setID(parseInt(msg.split(':')[1]))
-            // })
-            // ws.send('new instance connected via socket')
-        })
-        ws.onmessage = (e) => {
-            let msg = e.data
-            console.log('received from socket: ', msg)
-            if (msg.startsWith('connection id:'))
-                setID(parseInt(msg.split(':')[1]))
-        }
+        // let ws = new WebSocket('wss://localhost:8080')
+        // ws.addEventListener('open', (e) => {
+        //     // ws.addEventListener('message', (e) => {
+        //     //     let msg = e.data
+        //     //     console.log('received from socket: ', msg)
+        //     //     if (msg.startsWith('connection id:'))
+        //     //         setID(parseInt(msg.split(':')[1]))
+        //     // })
+        //     // ws.send('new instance connected via socket')
+        // })
+        // ws.onmessage = (e) => {
+        //     let msg = e.data
+        //     console.log('received from socket: ', msg)
+        //     if (msg.startsWith('connection id:'))
+        //         setID(parseInt(msg.split(':')[1]))
+        // }
 
-        window.onbeforeunload = () => {
-            ws.onclose = () => {}
-            ws.close()
-        }
+        // window.onbeforeunload = () => {
+        //     ws.onclose = () => {}
+        //     ws.close()
+        // }
 
-        setSocket(ws)
+        // let ws = getSocket(setID)
+
+        // setSocket(ws)
     }, [])
 
     return(
@@ -47,9 +50,9 @@ export const LandingPage = () => {
                     <div className="link-container">
                         <Button id="link-button" href="/signup">Sign Up</Button>
                     </div>
-                    <div className='link-container'>
+                    {/* <div className='link-container'>
                         <Button className="link-button" onClick={()=> socket.send(`test:${id}`)}>Test Socket</Button>
-                    </div>
+                    </div> */}
                 </form>
             </div>
         </Container>

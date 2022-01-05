@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { ChannelShow } from "./channels/ChannelShow";
 import { LandingPage } from "./channels/LandingPage";
 import { ChannelList} from "./channels/ChannelList";
@@ -14,6 +14,7 @@ import './App.css';
 // const url = 'http://localhost:3001'
 
 // new Date().toUTCString()
+
 function App() {
 
   return (
@@ -38,4 +39,16 @@ function App() {
   )
 }
 
-export default App;
+export const SocketContext = React.createContext()
+const AppWithContext = () =>{
+  const [socket, setSocket] = useState(null)
+  const [socketID, setSocketID] = useState(-1)
+
+  return (
+    <SocketContext.Provider value={ {socket, setSocket, socketID, setSocketID}}>
+      <App/>
+    </SocketContext.Provider>
+  )
+}
+
+export default AppWithContext;
