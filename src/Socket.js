@@ -1,7 +1,11 @@
-let getSocket = (setID, address = 'localhost', port = 8080) => {
+// fetches a socket connection using the address defined in env.local
+// This function returns a connected websocket, but lacks a connection id
+// The page following connection must wait for the id to be assigned before
+// replacing the onmessage listener
+let getSocket = (setSocketID) => {
     console.log('establishing socket connection')
 
-    let ws = new WebSocket(`wss://${address}:8080`)
+    let ws = new WebSocket("wss://localhost:8080")
     ws.addEventListener('open', (e) => { 
         console.log("socket connection established")
     })
@@ -10,17 +14,15 @@ let getSocket = (setID, address = 'localhost', port = 8080) => {
         let msg = e.data
         console.log('received from socket: ', msg)
         if (msg.startsWith('connection id:'))
-            setID(parseInt(msg.split(':')[1]))
+            setSocketID(parseInt(msg.split(':')[1]))
+            // set id and connected params using provided functions
     }
 
     window.onbeforeunload = () => {
+        setSocketID(-1)
         ws.onclose = () => {}
         ws.close()
     }
-
-    // console.log("waiting for connection id from Socket server")
-    // while (id < 0);
-    // console.log("connect id received, proceeding")
 
     return ws;
 }

@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import './index.css';
-import App from './components/App';
+// import App from './components/App';
+import AppWithContext from './components/SocketContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AppWithContext/>
   </React.StrictMode>,
   document.getElementById('root')
 );

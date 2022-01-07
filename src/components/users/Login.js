@@ -1,16 +1,10 @@
-import React, {useRef, useState, useContext} from 'react'
+import React, {useRef, useState} from 'react'
 import {Form, Button, Card, Alert, Container} from 'react-bootstrap'
 import {Link, useNavigate} from 'react-router-dom'
 import {useAuth} from "../contexts/AuthContext";
 import './Login.css';
 
-import { SocketContext } from '../App';
-import getSocket from '../../Socket';
-
 export default function Login(){
-    // // establish global context for socket connection
-    // static const contextType = StoreContext
-    const {setSocket, setSocketID} = useContext(SocketContext);
 
     const emailRef = useRef();
     const passwordRef = useRef();
@@ -27,14 +21,6 @@ export default function Login(){
             setLoading(true)
             await login(emailRef.current.value, passwordRef.current.value);
             history('/channels');
-
-            // establish socket connection and store it in global context
-            // let {socket, socketID} = getSocket();
-            // this.context.setSocket(socket);
-            // this.context.setSocketID(socketID);
-
-            let newSocket = getSocket(setSocketID)
-            setSocket(newSocket)
         } catch {
             setError('Failed to log-in.')
         }

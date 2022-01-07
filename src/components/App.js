@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { ChannelShow } from "./channels/ChannelShow";
 import { LandingPage } from "./channels/LandingPage";
 import { ChannelList} from "./channels/ChannelList";
@@ -39,16 +39,4 @@ function App() {
   )
 }
 
-export const SocketContext = React.createContext()
-const AppWithContext = () =>{
-  const [socket, setSocket] = useState(null)
-  const [socketID, setSocketID] = useState(-1)
-
-  return (
-    <SocketContext.Provider value={ {socket, setSocket, socketID, setSocketID}}>
-      <App/>
-    </SocketContext.Provider>
-  )
-}
-
-export default AppWithContext;
+export default App
