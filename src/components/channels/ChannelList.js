@@ -1,22 +1,27 @@
 import React, {useEffect, useState} from 'react'
 import {Container, Card, Button, Row, Col} from "react-bootstrap";
-import {Link} from 'react-router-dom';
 import './ChannelList.css';
 import { GrChannel } from 'react-icons/gr';
 
-const url = 'http://localhost:3001'
+// const url = 'http://localhost:3001'
+import { useSocketContext } from '../SocketContext';
 
 export const ChannelList = () => {
     const [channels, setChannels] = useState([])
+    const {socketFetch, socketID} = useSocketContext()
 
     useEffect(()=>{
-        const fetchData = async()=>{
-            const response = await fetch(url + '/channels')
-            const val = await response.json()
-            setChannels(val)
-        }
-        fetchData()
-    }, [])
+        socketFetch('get/channels', setChannels)
+    }, [socketID, socketFetch])
+
+    // const receiveData = async(response) => {
+    //     let msg = response.data
+    //     console.log("From socket:", msg)
+    //     try{
+    //         let val = await JSON.parse(msg)
+    //         setChannels(val)
+    //     } catch (e) {console.log("invalid Json response (probably a test)")}
+    // }
     
     function renderList(){
         return channels.map((item) => {
