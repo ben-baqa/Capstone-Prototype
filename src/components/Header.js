@@ -27,7 +27,7 @@ export const Header = () => {
           <Navbar.Text style={{color:"white"}}>
             {currentUser && currentUser.email}&nbsp;
           </Navbar.Text>
-          <Button variant="danger" onClick={handleLogout}>Log Out</Button>
+          {currentUser && currentUser.email && <Button variant="danger" onClick={handleLogout}>Log Out</Button>}
         </Navbar.Collapse>
       </Container>
     </Navbar>

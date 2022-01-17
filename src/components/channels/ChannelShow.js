@@ -51,7 +51,7 @@ export const ChannelShow = () => {
 
     return (
         <Container id="container">
-            <h1>Channel {id}</h1><br/>
+            <br/><h1>Channel {id}</h1><br/>
             <Container>
                 <Conversation entries={messages} deleteMessage={deleteMessage}/>
                 <form className="convo-container">
