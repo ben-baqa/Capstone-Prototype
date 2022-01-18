@@ -8,21 +8,12 @@ export const ChannelList = () => {
     const {socketFetch, socketID} = useSocketContext()
 
     useEffect(()=>{
-        socketFetch('get/channels', setChannels)
+        socketFetch('get/channels', (val) => {console.log(val);setChannels(val)})
     }, [socketID, socketFetch])
-
-    // const receiveData = async(response) => {
-    //     let msg = response.data
-    //     console.log("From socket:", msg)
-    //     try{
-    //         let val = await JSON.parse(msg)
-    //         setChannels(val)
-    //     } catch (e) {console.log("invalid Json response (probably a test)")}
-    // }
     
     function renderList(){
         return channels.map((item) => {
-            let channel = item.channel;
+            let channel = item;
             return(
                 <Col xs={4} className="link-col">
                     <Card>

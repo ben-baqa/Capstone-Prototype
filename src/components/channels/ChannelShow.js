@@ -24,44 +24,13 @@ export const ChannelShow = () => {
 
   const handleSubmit=async(e)=>{
     e.preventDefault();
-    // // let v = await JSON.stringify({sender:'D vefault User',text});
-    // // console.log(v);
-    // await fetch(url, {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify({sender:'Default User',text, channel:id})
-    // });
-    // setText('')
-    // fetchData();
-
-    // console.log("posting new message")
-    // socketSend(`post/Default User/${text}/${id}`)
-    // // await new Promise(resolve => setTimeout(1000))
-    // console.log("fetching messages")
-    socketFetch(`post/Default User/${text}/${id}&get/channel/${id}`, setMessages)
+    socketSend(`post/Default User/${text}/${id}`)
   }
 
   const deleteMessage=async(e, message)=>{
     e.preventDefault();
-    // await fetch(url, {
-    //   method: 'DELETE',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify(message)
-    // })
-    // fetchData();
-    // socketSend(`delete/${message.sender}/${message.date}`)
-    socketFetch(`delete/${message.sender}/${message.date}&get/channel/${id}`, setMessages)
+    socketSend(`delete/${message.sender}/${message.date}/${id}`)
   }
-
-  // const fetchData = async()=>{
-  //   const response = await fetch(url + `/p/${id}`)
-  //   const val = await response.json()
-  //   setMessages(val);
-  // }
 
     return (
         <Container id="container">

@@ -1,4 +1,5 @@
 // fetches a socket connection using the hardcoded address
+// TODO: move server address to a publicly inaccessible config file
 // This function returns a connected websocket, but lacks a connection id
 // The page following connection must wait for the id to be assigned before
 // replacing the onmessage listener
@@ -14,6 +15,7 @@ let getSocket = (setSocketID) => {
     
     // for connecting to the persistant development server
     let ws = new WebSocket("wss://70.72.184.45:8080")
+
     ws.addEventListener('open', (e) => { 
         console.log("socket connection established")
     })
@@ -21,16 +23,20 @@ let getSocket = (setSocketID) => {
     ws.onmessage = (e) => {
         let msg = e.data
         console.log('received from socket: ', msg)
+        // set context socket id to received value
         if (msg.startsWith('connection id:'))
             setSocketID(parseInt(msg.split(':')[1]))
-            // set id and connected params using provided functions
     }
 
-    window.onbeforeunload = () => {
+    ws.onclose = () => {
         setSocketID(-1)
-        ws.onclose = () => {}
-        ws.close()
     }
+
+    // window.onbeforeunload = () => {
+    //     setSocketID(-1)
+    //     ws.onclose = () => {}
+    //     ws.close()
+    // }
 
     return ws;
 }
