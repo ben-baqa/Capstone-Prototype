@@ -1,6 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import {Container, Card, Button, Row, Col} from "react-bootstrap";
 import './ChannelList.css';
+import { GrChannel } from 'react-icons/gr';
+
+// const url = 'http://localhost:3001'
 import { useSocketContext } from '../SocketContext';
 
 export const ChannelList = () => {
@@ -16,11 +19,13 @@ export const ChannelList = () => {
             let channel = item;
             return(
                 <Col xs={4} className="link-col">
-                    <Card>
+                    <Card  className="channel-card">
                         <Card.Body>
-                            <Card.Title>Channel {channel}</Card.Title>
+                            <GrChannel style={{marginBottom:"10px"}}/>
+                            <Card.Title>
+                                <a style={{color:"blue",textDecoration:"none"}} href={`/channels/${channel}`}>Channel {channel}</a>
+                            </Card.Title>
                         </Card.Body>
-                        <Button href={`/channels/${channel}`}>Join</Button>
                     </Card>
                 </Col>
             );
@@ -35,7 +40,6 @@ export const ChannelList = () => {
                     {renderList()}
                 </Row>
             </Container>
-            <br/><Button href="/channels/1">Sample Channel</Button>
         </Container>
     )
 }

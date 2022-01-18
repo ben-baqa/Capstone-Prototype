@@ -1,14 +1,19 @@
 .page-title{
+    padding-top:15px;
     padding-bottom:30px;
 }
 
 .link-col{
     marginBottom:30px;
-    display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.channel-card{
+    text-align: center;
 }
 
 #container{
     min-height: 100vh;
 }
+
