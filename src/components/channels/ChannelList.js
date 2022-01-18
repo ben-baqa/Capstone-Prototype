@@ -15,10 +15,9 @@ export const ChannelList = () => {
     }, [socketID, socketFetch])
     
     function renderList(){
-        return channels.map((item) => {
-            let channel = item;
+        return channels.map(channel => {
             return(
-                <Col xs={4} className="link-col">
+                <Col xs={4} className="link-col" key={channel}>
                     <Card  className="channel-card">
                         <Card.Body>
                             <GrChannel style={{marginBottom:"10px"}}/>
