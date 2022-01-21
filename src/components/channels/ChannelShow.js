@@ -5,13 +5,10 @@ import {Conversation} from "./Conversation";
 import './ChannelShow.css'
 import { useSocketContext } from '../SocketContext';
 import {useAuth} from "../contexts/AuthContext";
-import useForceUpdate from '../../customHooks';
 
 export const ChannelShow = () => {
   // get channel id from url
   let {id} = useParams()
-  
-  let forceUpdate = useForceUpdate()
 
   const {socketFetch, socketSend, socketID} = useSocketContext()
 
