@@ -1,5 +1,58 @@
 .message-card{
-    width:50%;
+    width:100%;
     margin-bottom: 20px;
 }
 
+.back-button-div{
+    margin-top: 12px;
+    float:right;
+}
+
+.header-div{
+    display: flex;
+    position: relative;
+}
+
+.sender-header{
+    padding-top:5px;
+}
+
+.bin-button{
+    position: absolute;
+    right: 0;
+}
+
+.user-icon{
+    padding-top:4px;
+    padding-right:5px;
+}
+
+.footer-div{
+    display: flex;
+    position: relative;
+}
+
+#footer-time-icon{
+    margin-top:3px;
+    margin-right:3px;
+}
+
+#footer-date-icon{
+    margin-bottom:2px;
+    margin-right:6px;
+}
+
+.footer-date-div{
+    position: absolute;
+    right: 0;
+}
+
+#submit-button{
+    display: block;
+    margin-top:10px;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
