@@ -1,0 +1,6 @@
+# Redirects from browser url to site url
+/home           /
+/channels       /channels
+/channels/:id   /channels/:id
+/signup         /signup
+/login          /login
