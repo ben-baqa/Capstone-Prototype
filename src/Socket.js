@@ -14,7 +14,7 @@ let getSocket = (setSocketID) => {
     // let ws = new WebSocket("wss://localhost:8080")
     
     // for connecting to the persistant development server
-    let ws = new WebSocket("wss://70.72.184.45:8080")
+    let ws = new WebSocket("wss://talk-box-server.herokuapp.com")
 
     ws.addEventListener('open', (e) => { 
         console.log("socket connection established")
