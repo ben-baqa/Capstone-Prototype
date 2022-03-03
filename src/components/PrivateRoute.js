@@ -4,7 +4,7 @@ import {useAuth} from './contexts/AuthContext';
 
 const PrivateRoute = () => {
     const {currentUser} = useAuth();
-    return currentUser && currentUser.emailVerified ? <Outlet/> : <Navigate to="/"/>
+    return currentUser ? <Outlet/> : <Navigate to="/"/>
 }
 
 export default PrivateRoute;
