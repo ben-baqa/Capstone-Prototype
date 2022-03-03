@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Navbar, Nav, Container, Button} from 'react-bootstrap';
+import {Navbar, Container, Button} from 'react-bootstrap';
 import {useAuth} from "./contexts/AuthContext";
 import {useNavigate} from "react-router-dom";
 
@@ -15,6 +15,7 @@ export const Header = () => {
       navigate('/');
     } catch {
       setError('Failed to log out.');
+      console.log(error);
     }
   }
 
