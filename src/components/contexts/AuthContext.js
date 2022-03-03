@@ -1,3 +1,5 @@
+
+
 import React, {useContext, useState, useEffect} from 'react'
 import {auth} from '../../firebase';
 
@@ -13,8 +15,10 @@ export function AuthProvider({children}) {
     const [currentUser, setCurrentUser] = useState();
     const [loading, setLoading] = useState(true);
 
-    function signup(email, password){
-        return auth.createUserWithEmailAndPassword(email, password);
+    async function signup(email, password){
+        const userCred = await auth.createUserWithEmailAndPassword(email, password);
+        await userCred.user.sendEmailVerification({url:"https://talkbox.one/"});
+        return auth.signOut();
     }
 
     function login(email, password){

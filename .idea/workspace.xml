@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ce27619d-b20f-4661-9323-6a26a6968605" name="Changes" comment="Implemented email verification feature">
+      <change beforePath="$PROJECT_DIR$/src/components/PrivateRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PrivateRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/contexts/AuthContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/contexts/AuthContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/users/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/Signup.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="21ciISlo5dFMC2LHv7vKu0nK9p6" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ce27619d-b20f-4661-9323-6a26a6968605" name="Changes" comment="" />
+      <created>1638246698964</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638246698964</updated>
+      <workItem from="1638246701858" duration="4359000" />
+      <workItem from="1638389467981" duration="5237000" />
+      <workItem from="1638406930234" duration="1589000" />
+      <workItem from="1638435056106" duration="418000" />
+      <workItem from="1638479227100" duration="1308000" />
+      <workItem from="1639511337076" duration="3296000" />
+      <workItem from="1639585923415" duration="2745000" />
+      <workItem from="1640040218333" duration="7829000" />
+      <workItem from="1640728010297" duration="2074000" />
+      <workItem from="1641945848067" duration="3014000" />
+      <workItem from="1642010032875" duration="11000" />
+      <workItem from="1642461767740" duration="2880000" />
+      <workItem from="1642466297607" duration="186000" />
+      <workItem from="1642630384571" duration="6878000" />
+      <workItem from="1642788331291" duration="1965000" />
+      <workItem from="1645656885321" duration="5946000" />
+      <workItem from="1645725127785" duration="3292000" />
+      <workItem from="1646332383110" duration="181000" />
+      <workItem from="1646333910818" duration="1178000" />
+      <workItem from="1646338529374" duration="947000" />
+      <workItem from="1646339526239" duration="690000" />
+    </task>
+    <task id="LOCAL-00001" summary="Added more styling using custom css files">
+      <created>1638394574751</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1638394574751</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Implemented Basic Authentication">
+      <created>1640126862572</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1640126862572</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Polished Authentication Features">
+      <created>1640730075459</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1640730075459</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Updated aesthetics of channel list page">
+      <created>1642461832498</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1642461832498</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Updated aesthetics of channel show page">
+      <created>1642790292260</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1642790292260</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Implemented email verification feature">
+      <created>1646332488494</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1646332488494</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Implemented email verification feature">
+      <created>1646335018900</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1646335018900</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added more styling using custom css files" />
+    <MESSAGE value="Implemented Basic Authentication" />
+    <MESSAGE value="Polished Authentication Features" />
+    <MESSAGE value="Updated aesthetics of channel list page" />
+    <MESSAGE value="Updated aesthetics of channel show page" />
+    <MESSAGE value="Implemented email verification feature" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented email verification feature" />
+  </component>
+</project>
