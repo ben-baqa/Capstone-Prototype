@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import App from './App'
 import getSocket from '../Socket'
-import { RiSpectrumLine } from 'react-icons/ri'
 
 export const SocketContext = React.createContext()
 export const useSocketContext = () => React.useContext(SocketContext)
@@ -58,7 +57,7 @@ const AppWithContext = () =>{
     // in response to a JSON message from the socket
     let wrapResponse = (onResponse) => (response) => {
         let msg = response.data
-        if (msg == 'ping')
+        if (msg === 'ping')
             return;
         console.log("From socket:", msg)
         try{
