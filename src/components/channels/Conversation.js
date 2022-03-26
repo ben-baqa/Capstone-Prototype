@@ -17,7 +17,7 @@ export const Conversation = ({entries, deleteMessage, author}) => {
 }
 
 const ConversationEntry = ({sender, date, text, deleteMessage, author})=>{
-    const dateTime = new Date(date * 1000);
+    const dateTime = new Date(date * 1);
     const variant = author === sender ? 'dark' : 'light';
     return (
         <Card className="message-card" bg={variant} text={variant === 'light' ? 'dark' : 'white'}>
