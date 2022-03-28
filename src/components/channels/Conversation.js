@@ -8,9 +8,9 @@ import './Conversation.css';
 
 export const Conversation = ({entries, deleteMessage, author}) => {
     return <div>
-        {entries.map((entry)=>{
+        {entries.sort((a, b) => a.date < b.date? 1:-1).map((entry, index)=>{
             return (
-                <ConversationEntry key = {entry.date} {...entry} deleteMessage={deleteMessage} author={author}/>
+                <ConversationEntry key = {index} {...entry} deleteMessage={deleteMessage} author={author}/>
             )
         })}
     </div>
